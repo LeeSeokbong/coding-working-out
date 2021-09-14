@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <body>
+        <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <div id = "root"></div>
+        <script type = "text/babel">
+        // Ch 01. React 맛보기 - 06 JS와 JSX 섞어쓰기
+            const rootElement = document.getElementById("root");
+            function Number ({number, selecteed}) {
+                return selecteed ? <h1>{number}</h1> : <h3>{number}</h3>
+            }
+            const element = (
+                <>
+                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((number) => (
+                    <Number number = {number} selecteed = {number === 3}/>
+                ))}
+                </>
+            )
+            ReactDOM.render(element, rootElement)
+        </script>
+    </body>
+</html>
