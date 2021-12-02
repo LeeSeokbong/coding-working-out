@@ -1,0 +1,37 @@
+#marquee {
+    width: 100%;
+    height: 50px;
+    background: #fefefe;
+    color: #333;
+    position: absolute;
+    overflow-x: hidden;
+    border: 1px solid #4a4a4a;
+}
+
+.marqueeText {
+    width: 100%;
+    animation: scroll-right 10s linear infinite;
+}
+
+#powerup {
+    position: absolute;
+}
+
+.power  {
+    position: absolute;
+}
+
+#power {
+    position: absolute;
+}
+
+@keyframes scroll-right {
+    0% {
+        /* transform: translateX(-100%); */
+        left: 0%;
+    }
+    100% {
+        /* transform: translateX(100%); */
+        left: 100%;
+    }
+}
