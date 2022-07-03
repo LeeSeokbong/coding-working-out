@@ -6,3 +6,12 @@ let b = parseInt(input[1]);
 console.log(a)
 console.log(b)
 console.log(a+b);
+
+// console.log(a1);
+// let a1 = 2;
+
+// console.log(a2);
+// const a2;
+
+console.log(a3);
+var a3 = 1;
