@@ -1,33 +1,40 @@
 let fs = require('fs');
 // let input = fs.readFileSync('/dev/stdin').toString().trim().split(' ');
 let input = require('fs').readFileSync('20220712.txt').toString().trim().split(" ");
-let count = 1;
 let str = input[0];
 let num = +input[0];
-let answer;
-let answerNum = "";
+let answer = 0;
+let numSum;
+let numStr;
 if(num < 10) {
-    str = "0" + str
+    str = "0" + str;
 }
 
-for(let i = 0; i < 100; i++) {
-    if(answer < 10) {
-            answer = "0" + answer
-        }
-    answer = +str[0] + +str[1]
-    if(answer < 10) {
-            answer = "0" + answer
-        }
-    answerNum = answer.toString()
-    console.log(answerNum)
-    numAnswer = str[1] + answerNum[1]
-    // console.log(numAnswer)
-    if(+numAnswer !== num) {
-        count++
-        
-        str = numAnswer.toString()
+numSum = +str[0] + +str[1]
+console.log(numSum)
+numStr = str;
+
+while(numSum !== num) {
+    if(+numStr < 10) {
+        numStr = "0" + numStr;
+    } 
+    console.log(numStr)
+    if(numSum < 10) {
+        numSum = "0" + numSum;
     } else {
+        numSum = numSum + ""
+    }
+    console.log(numSum)
+    numStr = numStr[1] + numSum[1] //5
+    console.log(numStr)
+    numSum = +numStr[0] + +numStr[1];
+    
+    // console.log(numSum)
+    numSum = +numSum
+    answer++;
+    if(+numStr === num) {
         break;
     }
 }
-console.log(count)
+
+console.log(answer)
